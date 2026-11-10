@@ -1,0 +1,9 @@
+/* Đầu mối CSS (giữ thứ tự lớp như nhánh feat/build-new-ui-v2): lớp sau thắng lớp trước.
+   legacy: CSS giao diện bản 6 của app cũ, thay dần theo từng kế hoạch rồi xoá. */
+@layer legacy, tokens, base, layout, components, pages, utilities;
+@import url('./legacy.css') layer(legacy);
+@import url('./tokens.css') layer(tokens);
+@import url('./base.css') layer(base);
+@import url('./layout.css') layer(layout);
+@import url('./components.css') layer(components);
+@import url('./pages.css') layer(pages);

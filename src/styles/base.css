@@ -1,0 +1,19 @@
+/* Nền chung. Lưu ý: thuộc tính đặt ở đây thắng mọi quy tắc của lớp legacy, nên chỉ đặt những gì đúng cho toàn app. */
+
+/* icon Fluent là hình tô đặc theo màu chữ; cỡ của icon vẫn do lớp legacy và component quyết định */
+.ic { fill: currentColor; stroke: none; }
+
+/* chữ số đều cho giờ, điểm, mã (thay phông mono trước đây) */
+.num, .mono, .ev-time, .ev-t b, .ds-ticks, .ds-now b, .td-gio, .due, td.n, th.n, .tile-v, .bigscore { font-variant-numeric: tabular-nums; }
+
+/* vòng tiêu điểm: màu mực để rõ trên mọi nền, kể cả nút đỏ */
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+/* khung nhận tiêu điểm bằng script (tabindex=-1) không cần vòng: trước đây hộp thoại bị viền đỏ ở mép */
+[tabindex="-1"]:focus, [tabindex="-1"]:focus-visible { outline: none; }
+
+html { -webkit-tap-highlight-color: transparent; }
+
+/* tiêu đề và số nổi bật hơn phụ đề, cho cả các màn chưa chuyển */
+h1, h2, h3 { font-weight: 700; }
+.section-h h2 { font-size: var(--text-lg); }
+.tile-v, .bigscore { font-weight: 700; }

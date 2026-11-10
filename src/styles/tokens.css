@@ -1,0 +1,155 @@
+/* Token của VIH. Giá trị màu giữ nguyên từ bản cũ (tests/giao-dien-nen.test.js kiểm từng mã); gradient chỉ pha từ các biến màu này, không có mã màu mới.
+   Phông IBM Plex Sans (giấy phép OFL, fonts/OFL.txt): có chữ số đều nên không cần phông mono riêng cho giờ giấc. */
+
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("/fonts/plex-sans-vietnamese.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("/fonts/plex-sans-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("/fonts/plex-sans-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: var(--font);
+  --page: #f3f4f6;            /* nền trang */
+  --chrome: #f3f4f6;          /* thanh bên, thanh trên: cùng tông nền */
+  --sheet: #ffffff;           /* hộp thoại, thanh dưới, ô nhập */
+  --panel: #ffffff;           /* thẻ lớn */
+  --card: #ffffff;            /* thẻ hàng trong khối */
+  --raised: #f9fafb;
+  --active: #e5e7eb;          /* nền thanh chọn, thanh tiến độ */
+  --hover: #f3f4f6;
+  --border: #e5e7eb;
+  --rule: #eef0f3;
+  --control: #d1d5db;
+  --ink: #1f2937;
+  --muted: #4b5563;
+  --faint: #5f6673;
+  --accent: #de0015;          /* đỏ nút chính, FAB, ô đang chọn */
+  --accent-ink: #ffffff;
+  --accent-soft: #fde2e4;
+  --accent-line: #f3a3ab;
+  --link: #b5000f;            /* liên kết, chữ đỏ đậm trên nền trắng */
+  --ok: #15803d;  --ok-soft: #dcfce7;  --ok-ink: #166534;
+  --bad: #b91c1c; --bad-soft: #fee2e2; --bad-ink: #991b1b;
+  --warn: #b45309; --warn-soft: #fef3c7; --warn-line: #fde68a;
+  --info: #075985; --info-soft: #e0f2fe;
+  --brand: #de0015;           /* logo, biểu tượng app */
+  --scrim: rgba(17, 24, 39, .46);
+  --shadow-card: 0 1px 2px rgba(31, 41, 55, .04), 0 6px 20px rgba(31, 41, 55, .05);
+  --shadow-fab: 0 8px 20px rgba(222, 0, 21, .32);
+  --float: 0 12px 32px rgba(17, 24, 39, .18), 0 2px 6px rgba(17, 24, 39, .06);   /* chỉ cho thứ nổi: hộp thoại, thông báo nổi */
+  --r-panel: 16px; --r-card: 14px; --r-control: 12px;
+  --gap: 16px;
+  --tabbar-h: 68px;
+  --topbar-h: 56px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-exit: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-press: 120ms; --t-hover: 150ms; --t-menu: 180ms; --t-ui: 240ms; --t-page: 260ms; --t-sheet: 320ms; --t-fill: 800ms;
+  color-scheme: light;
+  /* tên cũ vẫn được một số chỗ dùng */
+  --bg: var(--page); --surface: var(--card); --surface-2: var(--panel); --line: var(--border); --mute-soft: var(--active);
+  --brand-soft: var(--accent-soft); --brand-ink: #fff; --today: var(--accent-soft);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0c0d0f; --chrome: #0c0d0f; --sheet: #17181b; --panel: #17181b; --card: #1d1e22; --raised: #202125;
+    --active: #2c2d32; --hover: #24252a; --border: #2b2c30; --rule: #25262a; --control: #44464b; --o-nen: var(--hover);
+    --ink: #f2f3f5; --muted: #b4b6ba; --faint: #949494;
+    --accent: #e5112a; --accent-ink: #ffffff; --accent-soft: #3a1519; --accent-line: #7a2a31; --link: #ff8a95;
+    --ok: #3fc07a; --ok-soft: #142a1d; --ok-ink: #3fc07a;
+    --bad: #f0687f; --bad-soft: #2c1a20; --bad-ink: #f0687f;
+    --warn: #f0b84f; --warn-soft: #2e2512; --warn-line: #5c4615;
+    --info: #7cc4ee; --info-soft: #14283a;
+    --scrim: rgba(0, 0, 0, .62);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, .4);
+    --float: 0 16px 40px rgba(0, 0, 0, .55);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+    --page: #0c0d0f; --chrome: #0c0d0f; --sheet: #17181b; --panel: #17181b; --card: #1d1e22; --raised: #202125;
+    --active: #2c2d32; --hover: #24252a; --border: #2b2c30; --rule: #25262a; --control: #44464b; --o-nen: var(--hover);
+    --ink: #f2f3f5; --muted: #b4b6ba; --faint: #949494;
+    --accent: #e5112a; --accent-ink: #ffffff; --accent-soft: #3a1519; --accent-line: #7a2a31; --link: #ff8a95;
+    --ok: #3fc07a; --ok-soft: #142a1d; --ok-ink: #3fc07a;
+    --bad: #f0687f; --bad-soft: #2c1a20; --bad-ink: #f0687f;
+    --warn: #f0b84f; --warn-soft: #2e2512; --warn-line: #5c4615;
+    --info: #7cc4ee; --info-soft: #14283a;
+    --scrim: rgba(0, 0, 0, .62);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, .4);
+    --float: 0 16px 40px rgba(0, 0, 0, .55);
+    color-scheme: dark;
+}
+
+/* ---------- thang đo mới ---------- */
+:root {
+  /* chữ: đơn vị rem để "Chữ lớn" đổi được cỡ gốc */
+  --text-xs: .75rem; --text-sm: .8125rem; --text-md: .875rem; --text-base: 1rem; --text-lg: 1.125rem; --text-xl: 1.375rem; --text-2xl: 1.75rem; --text-3xl: 2.25rem; --text-4xl: 2.75rem;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 24px; --sp-7: 32px; --sp-8: 48px;
+  --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-full: 999px;
+  --shadow-1: 0 1px 2px rgba(31, 41, 55, .05), 0 4px 16px rgba(31, 41, 55, .06);
+  --shadow-2: 0 2px 4px rgba(31, 41, 55, .06), 0 14px 32px rgba(31, 41, 55, .13);
+  --shadow-pop: 0 10px 28px rgba(17, 24, 39, .17), 0 2px 6px rgba(17, 24, 39, .07);
+  --shadow-modal: var(--float);
+  --z-sticky: 20; --z-nav: 30; --z-menu: 40; --z-scrim: 50; --z-modal: 60; --z-toast: 70;
+  --control-h: 36px;
+  --o-nen: #f0efed;   /* đo trực tiếp từ Capture.PNG của x-hr (07/11); bản Tối ghi đè ở khối theme phía trên */
+  --text-body: var(--text-md);   /* nội dung, ô nhập: 14 px trên máy tính, 16 px trên cảm ứng */
+  /* tone mặc định: đặt ở :root để chỉ tới phần tử qua kế thừa, .t-* trên chính phần tử vẫn thắng. Đừng đặt trên .c-card vì lớp components thắng lớp tokens */
+  --tone: var(--muted); --tone-soft: var(--active); --tone-grad: linear-gradient(135deg, var(--raised), var(--panel) 82%); --tone-solid: var(--grad-solid-slate); --tone-on: var(--on-slate); --tone-1: var(--muted); --tone-2: var(--ink);
+  /* màu lẻ của bản cũ, giữ giá trị, nay có tên */
+  --presence-on: #2f9e6a; --presence-away: #d4a017; --presence-meet: #d9482b; --presence-off: #9aa1aa;
+  --map-bg: #e8e6df; --map-me: #2563eb; --toast-bg: var(--ink);
+  /* nền trang Hôm nay theo mẫu x-hr.co của chủ dự án: mảng trên xanh trời, mảng dưới vàng kem; nút chính trung tính đen đậm */
+  --hero-xanh: #5fb0fd; --hero-vang: #f7e6bd; --ink-dam: #141414;
+  --chu-den: #000;   /* chữ đen chuẩn cho nhãn cần nổi nhất (chủ dự án 07/11) */
+
+  /* gradient nhạt cho card: màu nhạt của tone tan dần vào nền thẻ, tự đổi theo Sáng, Tối */
+  --grad-rose: linear-gradient(135deg, var(--accent-soft) 0%, var(--panel) 82%);
+  --grad-coral: linear-gradient(135deg, var(--bad-soft) 0%, var(--panel) 82%);
+  --grad-amber: linear-gradient(135deg, var(--warn-soft) 0%, var(--panel) 82%);
+  --grad-sky: linear-gradient(135deg, var(--info-soft) 0%, var(--panel) 82%);
+  --grad-mint: linear-gradient(135deg, var(--ok-soft) 0%, var(--panel) 82%);
+  --grad-slate: linear-gradient(135deg, var(--active) 0%, var(--panel) 82%);
+  /* gradient đậm cho ô icon, thẻ nổi bật, nút */
+  --grad-solid-rose: linear-gradient(135deg, var(--accent), var(--link));
+  --grad-solid-coral: linear-gradient(135deg, var(--bad), var(--bad-ink));
+  --grad-solid-amber: linear-gradient(135deg, var(--warn), color-mix(in srgb, var(--warn) 80%, black));
+  --grad-solid-sky: linear-gradient(135deg, color-mix(in srgb, var(--info) 88%, white), var(--info));
+  --grad-solid-mint: linear-gradient(135deg, var(--ok), var(--ok-ink));
+  --grad-solid-slate: linear-gradient(135deg, var(--ink), var(--muted));
+  --on-solid: #fff;       /* chữ, icon trên nền đậm */
+  --on-slate: #fff;
+}
+@media (pointer: coarse) { :root { --control-h: 44px; --text-body: var(--text-base); } }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --toast-bg: #2a2b2f; --on-solid: #000; --on-slate: var(--ink);
+    --hero-xanh: #173f6a; --hero-vang: #3a301b; --ink-dam: #f2f3f5; --chu-den: var(--ink);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, .45); --shadow-2: 0 2px 4px rgba(0, 0, 0, .5), 0 14px 32px rgba(0, 0, 0, .55); --shadow-pop: 0 10px 28px rgba(0, 0, 0, .6);
+    --grad-solid-rose: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    --grad-solid-coral: linear-gradient(135deg, var(--bad), color-mix(in srgb, var(--bad) 80%, black));
+    --grad-solid-mint: linear-gradient(135deg, var(--ok), color-mix(in srgb, var(--ok) 80%, black));
+    --grad-solid-sky: linear-gradient(135deg, var(--info), color-mix(in srgb, var(--info) 80%, black));
+    --grad-solid-slate: linear-gradient(135deg, var(--active), var(--raised));
+  }
+}
+:root[data-theme="dark"] {
+    --toast-bg: #2a2b2f; --on-solid: #000; --on-slate: var(--ink);
+    --hero-xanh: #173f6a; --hero-vang: #3a301b; --ink-dam: #f2f3f5; --chu-den: var(--ink);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, .45); --shadow-2: 0 2px 4px rgba(0, 0, 0, .5), 0 14px 32px rgba(0, 0, 0, .55); --shadow-pop: 0 10px 28px rgba(0, 0, 0, .6);
+    --grad-solid-rose: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    --grad-solid-coral: linear-gradient(135deg, var(--bad), color-mix(in srgb, var(--bad) 80%, black));
+    --grad-solid-mint: linear-gradient(135deg, var(--ok), color-mix(in srgb, var(--ok) 80%, black));
+    --grad-solid-sky: linear-gradient(135deg, var(--info), color-mix(in srgb, var(--info) 80%, black));
+    --grad-solid-slate: linear-gradient(135deg, var(--active), var(--raised));
+}
+
+/* ---------- tone: màu mang nghĩa. Mọi component nhận tham số tone rồi dùng các biến này ---------- */
+.t-rose { --tone: var(--link); --tone-soft: var(--accent-soft); --tone-grad: var(--grad-rose); --tone-solid: var(--grad-solid-rose); --tone-on: var(--accent-ink); --tone-1: var(--link); --tone-2: var(--presence-meet); }       /* cần xử lý, hôm nay, đang chọn */
+.t-coral { --tone: var(--bad-ink); --tone-soft: var(--bad-soft); --tone-grad: var(--grad-coral); --tone-solid: var(--grad-solid-coral); --tone-on: var(--on-solid); --tone-1: var(--bad-ink); --tone-2: var(--presence-meet); }      /* quá hạn, lỗi */
+.t-amber { --tone: var(--warn); --tone-soft: var(--warn-soft); --tone-grad: var(--grad-amber); --tone-solid: var(--grad-solid-amber); --tone-on: var(--on-solid); --tone-1: var(--warn); --tone-2: color-mix(in srgb, var(--presence-away) 62%, var(--warn)); }        /* sắp hạn, đang chờ */
+.t-sky { --tone: var(--info); --tone-soft: var(--info-soft); --tone-grad: var(--grad-sky); --tone-solid: var(--grad-solid-sky); --tone-on: var(--on-solid); --tone-1: var(--info); --tone-2: var(--map-me); }              /* lịch, thông tin */
+.t-mint { --tone: var(--ok-ink); --tone-soft: var(--ok-soft); --tone-grad: var(--grad-mint); --tone-solid: var(--grad-solid-mint); --tone-on: var(--on-solid); --tone-1: var(--presence-on); --tone-2: color-mix(in srgb, var(--ok) 45%, var(--info)); }           /* xong, tốt */
+.t-slate { --tone: var(--muted); --tone-soft: var(--active); --tone-grad: var(--grad-slate); --tone-solid: var(--grad-solid-slate); --tone-on: var(--on-slate); --tone-1: var(--muted); --tone-2: var(--ink); }          /* trung tính, số liệu */
