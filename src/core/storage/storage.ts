@@ -4,6 +4,9 @@ export interface SafeStorage {
   get<T>(key: string, fallback: T): T
   set<T>(key: string, value: T): void
   remove(key: string): void
+  /** Chuỗi thô, khoá đầy đủ (không thêm tiền tố): dùng cho khoá app cũ như vih-tema. */
+  getRaw(fullKey: string): string | null
+  setRaw(fullKey: string, value: string): void
 }
 
 /** Kho trình duyệt an toàn: chế độ riêng tư, Safari hay trang bị chặn lưu trữ thì trả fallback, không ném. */
@@ -34,6 +37,20 @@ export function createStorage(kind: StorageKind, prefix = 'vih-'): SafeStorage {
     remove(key: string): void {
       try {
         kho()?.removeItem(prefix + key)
+      } catch {
+        // như trên
+      }
+    },
+    getRaw(fullKey: string): string | null {
+      try {
+        return kho()?.getItem(fullKey) ?? null
+      } catch {
+        return null
+      }
+    },
+    setRaw(fullKey: string, value: string): void {
+      try {
+        kho()?.setItem(fullKey, value)
       } catch {
         // như trên
       }
