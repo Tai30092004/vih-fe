@@ -1,0 +1,14 @@
+{
+  "appName": "VIH Work Calendar",
+  "actions": { "save": "Save", "cancel": "Cancel", "close": "Close", "back": "Back", "retry": "Retry", "open": "Open", "seeAll": "See all", "more": "More" },
+  "nav": {
+    "today": "Today", "calendar": "Calendar", "tasks": "Tasks", "chat": "Messages", "create": "Create", "menu": "Menu",
+    "du-an": "Projects", "trinh": "Proposals", "chuyen-di": "Trips", "doi-tac": "Partners", "so-do": "Organization", "team": "Team",
+    "bao-cao": "Reports", "quy-trinh": "Workflows", "eval": "Evaluation", "ban-do": "Map", "sang-kien": "Initiatives",
+    "fun": "News feed", "vi": "Points & Wallet", "admin": "Admin", "nhomViec": "Work", "tienIch": "Utilities"
+  },
+  "account": { "theme": "Theme", "light": "Light", "dark": "Dark", "auto": "Auto", "language": "Language", "logout": "Sign out", "profile": "Profile" },
+  "errors": { "title": "Something went wrong", "body": "This screen hit an error. Try again; if it persists, tell your admin.", "notFound": "Page not found" },
+  "migrating": { "title": "Moving to the new version", "body": "This screen is not in the new version yet. Open it in the current version.", "openOld": "Open current version" },
+  "loading": "Loading…"
+}

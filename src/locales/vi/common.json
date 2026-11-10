@@ -1,0 +1,15 @@
+{
+  "appName": "Lịch công tác VIH",
+  "actions": { "save": "Lưu", "cancel": "Huỷ", "close": "Đóng", "back": "Quay lại", "retry": "Thử lại", "open": "Mở", "seeAll": "Xem tất cả", "more": "Thêm" },
+  "nav": {
+    "today": "Hôm nay", "calendar": "Lịch", "tasks": "Việc", "chat": "Tin nhắn", "create": "Tạo mới", "menu": "Menu",
+    "du-an": "Dự án", "trinh": "Tờ trình", "chuyen-di": "Chuyến đi", "doi-tac": "Đối tác", "so-do": "Tổ chức", "team": "Đội",
+    "bao-cao": "Báo cáo", "quy-trinh": "Quy trình", "eval": "Bảng đánh giá", "ban-do": "Bản đồ", "sang-kien": "Sáng kiến",
+    "fun": "Bảng tin", "vi": "Điểm & Ví VIH", "admin": "Quản trị", "nhomViec": "Nhóm việc", "tienIch": "Tiện ích"
+  },
+  "account": { "theme": "Giao diện", "light": "Sáng", "dark": "Tối", "auto": "Tự động", "language": "Ngôn ngữ", "logout": "Đăng xuất", "profile": "Hồ sơ" },
+  "errors": { "title": "Đã có lỗi", "body": "Màn hình này gặp lỗi. Thử lại, nếu vẫn lỗi hãy báo quản trị.", "notFound": "Không tìm thấy trang" },
+  "migrating": { "title": "Đang chuyển sang bản mới", "body": "Màn hình này chưa có trong bản mới. Mở ở bản hiện tại để dùng tiếp.", "openOld": "Mở bản hiện tại" },
+  "loading": "Đang tải…",
+  "test": { "chiCoTiengViet": "Chỉ có tiếng Việt" }
+}
